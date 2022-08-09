@@ -1,0 +1,210 @@
+.main {
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    margin-top: 64px;
+    width: 80%;
+    display: flex;
+
+    .filtersPanel {
+      width: 225px;
+      margin-right: 38px;
+
+      .counter {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        color: #898989;
+      }
+
+      .title {
+        margin-top: 5px;
+        margin-bottom: 13px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 140%;
+      }
+
+      .filterGroup {
+        margin-bottom: 24px;
+        margin-top: 24px;
+
+        .filterTitle {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 140%;
+          margin-bottom: 12px;
+        }
+
+        .rangeContainer {
+          display: flex;
+
+          .priceInput {
+            width: 112px;
+            height: 42px;
+            border: 1px solid #DBDBDB;
+          }
+
+          .startPriceInput {
+            border-radius: 4px 0 0 4px;
+            border-right: none;
+          }
+
+          .endPriceInput {
+            border-radius: 0 4px 4px 0;
+          }
+        }
+      }
+    }
+
+    .productsPanel {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(242px, 1fr));
+      grid-auto-rows: auto;
+      grid-auto-flow: dense;
+      gap: 1.5rem;
+
+      .productCard {
+        border: 1px solid #E6E6E6;
+        border-radius: 4px;
+
+        .productImage {
+          position: relative;
+          width: 100%;
+          min-width: 124px;
+          background: #E6E6E6 url("./../public/kotik.webp") no-repeat center;
+          background-size: cover;
+          border-radius: 4px 4px 0 0;
+          height: 242px;
+        }
+
+        .productInfo {
+          padding: 12px 16px 16px;
+
+          .title {
+            padding: 0;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+          }
+
+          .price {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 140%;
+            margin-top: 12px;
+            margin-bottom: 18px;
+          }
+
+          .cardFooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .outlinedButton {
+              cursor: pointer;
+              width: 106px;
+              height: 40px;
+              background: none;
+              border: 1px solid #DBDBDB;
+              border-radius: 8px;
+              transition: .5s;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 140%;
+
+              &:hover {
+                background: orangered;
+                border: 2px solid #DBDBDB;
+              }
+            }
+
+            .likeBtn {
+              cursor: pointer;
+              width: 32px;
+              height: 32px;
+              border: none;
+              background: none;
+
+              svg {
+                fill: white;
+                transition: .5s;
+
+                &:hover {
+                  fill: crimson;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 963px) {
+  .main {
+    .wrapper {
+      //width: 95%;
+      .productsPanel {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+  }
+}
+
+@media (max-width: 722px) {
+  .main {
+    .wrapper {
+      width: 95%;
+
+      .productsPanel {
+        .productCard {
+          display: flex;
+          padding: 16px;
+
+          .productImage {
+            width: 124px;
+            height: 124px;
+            border-radius: 4px;
+          }
+
+          .productInfo {
+            padding: 0;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 604px) {
+  .main {
+    .wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        font-size: 26px;
+      }
+
+      .productsPanel {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        .productInfo {
+          width: 75%;
+        }
+      }
+
+      .filtersPanel {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+

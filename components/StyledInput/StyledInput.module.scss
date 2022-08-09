@@ -1,0 +1,33 @@
+.customCheckbox{
+  cursor: pointer;
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:not(:disabled):active+span::before {
+      background-color: #7993A6;
+    }
+    &:checked+span::before {
+      background: #7993A6 url("./checkIcon.svg") no-repeat center;
+    }
+  }
+  span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid #D0D0D0;
+      border-radius: 4px;
+      margin-right: 9px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+    }
+  }
+}
